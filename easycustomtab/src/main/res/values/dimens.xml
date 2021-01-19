@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="landing_logo_top">100dp</dimen>
+
+    <dimen name="main_tab_height">60dp</dimen>
+
+    <dimen name="image_4dp">4dp</dimen>
+    <dimen name="image_8dp">8dp</dimen>
+    <dimen name="image_12dp">12dp</dimen>
+    <dimen name="image_16dp">16dp</dimen>
+    <dimen name="image_24dp">24dp</dimen>
+    <dimen name="image_32dp">32dp</dimen>
+    <dimen name="image_36dp">36dp</dimen>
+    <dimen name="image_48dp">48dp</dimen>
+    <dimen name="image_56dp">56dp</dimen>
+    <dimen name="image_64dp">64dp</dimen>
+    <dimen name="image_72dp">72dp</dimen>
+    <dimen name="image_100dp">100dp</dimen>
+    <dimen name="image_150dp">150dp</dimen>
+    <dimen name="image_200dp">200dp</dimen>
+    <dimen name="image_250dp">250dp</dimen>
+
+    <dimen name="line_1dp">1dp</dimen>
+    <dimen name="line_2dp">2dp</dimen>
+    <dimen name="line_8dp">8dp</dimen>
+
+    <dimen name="radius_8dp">8dp</dimen>
+    <dimen name="radius_24dp">24dp</dimen>
+
+    <dimen name="global_4dp">4dp</dimen>
+    <dimen name="global_8dp">8dp</dimen>
+    <dimen name="global_12dp">12dp</dimen>
+    <dimen name="global_16dp">16dp</dimen>
+    <dimen name="global_24dp">24dp</dimen>
+    <dimen name="global_32dp">32dp</dimen>
+    <dimen name="global_48dp">48dp</dimen>
+    <dimen name="global_56dp">56dp</dimen>
+    <dimen name="global_64dp">64dp</dimen>
+
+    <dimen name="text_6sp">6sp</dimen>
+    <dimen name="text_8sp">8sp</dimen>
+    <dimen name="text_10sp">10sp</dimen>
+    <dimen name="text_12sp">12sp</dimen>
+    <dimen name="text_13sp">13sp</dimen>
+    <dimen name="text_14sp">14sp</dimen>
+    <dimen name="text_15sp">15sp</dimen>
+    <dimen name="text_16sp">16sp</dimen>
+    <dimen name="text_17sp">17sp</dimen>
+    <dimen name="text_18sp">18sp</dimen>
+    <dimen name="text_20sp">20sp</dimen>
+    <dimen name="text_21sp">21sp</dimen>
+    <dimen name="text_24sp">24sp</dimen>
+    <dimen name="text_30sp">30sp</dimen>
+    <dimen name="text_32sp">32sp</dimen>
+    <dimen name="text_38sp">38sp</dimen>
+
+    <dimen name="main_image_size">24dp</dimen>
+    <dimen name="project_image_height">200dp</dimen>
+    <dimen name="project_tab_height">90dp</dimen>
+    <dimen name="project_gallery_height">240dp</dimen>
+    <dimen name="margin_menu_top">16dp</dimen>
+    <dimen name="location_image_size">16dp</dimen>
+    <dimen name="property_unit_icon_size">48dp</dimen>
+    <dimen name="message_icon_size">56dp</dimen>
+    <dimen name="message_tab_icon_size">36dp</dimen>
+    <dimen name="message_tab_height">90dp</dimen>
+    <dimen name="intercom_icon_height">48dp</dimen>
+    <dimen name="library_icon_height">24dp</dimen>
+    <dimen name="library_big_icon_height">36dp</dimen>
+    <dimen name="visitor_icon">12dp</dimen>
+
+    <dimen name="menu_size">40dp</dimen>
+    <dimen name="text_menu_title">12sp</dimen>
+    <dimen name="message_red_size">12sp</dimen>
+</resources>

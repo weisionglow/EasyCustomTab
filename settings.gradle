@@ -1,0 +1,3 @@
+include ':easycustomtab'
+include ':app'
+rootProject.name = "EasyCustomTab"

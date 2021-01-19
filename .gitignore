@@ -1,0 +1,24 @@
+
+
+syntax: glob
+bin/**
+gen
+*.apk
+.apt_generated/**
+.gradle/**
+local.properties
+build/intermediates/**
+build/outputs/**
+build/tmp/**
+build/generated/**
+.idea/**
+.DS_Store
+*.iml
+//gradle/wrapper/gradle-wrapper.jar
+//gradle/wrapper/gradle-wrapper.properties
+//gradlew
+gradlew.bat
+build/android-profile/**
+
+app/src/main/java/generated/**
+
