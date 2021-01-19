@@ -19,13 +19,13 @@ dependencies {
 ```
 
 ## Step 3: Usual way to create ViewPager and TabLayout
-```
+``` kotlin
 binding.mainViewPager.adapter = MainTabAdapter(supportFragmentManager)
 binding.mainTabLayout.setupWithViewPager(binding.mainViewPager)
 ```
 
 ## Step 4: Put Context, TabLayout, ArrayList and EasyCustomTabType inside the EasyCustomTabHelper
-```
+``` kotlin
 val customTabHelper = EasyCustomTabHelper(
     this,
     binding.mainTabLayout,
@@ -55,7 +55,7 @@ val customTabHelper = EasyCustomTabHelper(
 Easy!!!
 
 ## You can change your show tab view:
-```
+``` kotlin
 EasyCustomTabType.ShowTextOnly //Show text only
 ```
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/77658913/105061053-033eea00-5ab4-11eb-8deb-636610d43d06.gif)
@@ -65,11 +65,11 @@ EasyCustomTabType.ShowTextOnly //Show text only
 
 Option: If you want custom your color, font or function
 For example:
-```
+``` kotlin
 // Set Custom Color
 customTabHelper.setColor(selectedColor = R.color.teal_700, unselectedColor = R.color.black)
 
-...
+
 // Set Custom Font
 customTabHelper.setFont(
     Typeface.createFromAsset(
@@ -78,7 +78,6 @@ customTabHelper.setFont(
     )
 )
 
-...
 // If you want to do some extra function when selected tab
 customTabHelper.onTabSelected = {
     Toast.makeText(this, "Selected Position: $it", Toast.LENGTH_SHORT).show()
