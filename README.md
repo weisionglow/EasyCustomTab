@@ -14,7 +14,7 @@ allprojects {
 ## Step 2: Add the dependency
 ```
 dependencies {
-  implementation 'com.github.weisionglow:EasyCustomTab:1.0'
+  implementation 'com.github.weisionglow:EasyCustomTab:1.1'
  }
 ```
 
@@ -52,6 +52,9 @@ val customTabHelper = EasyCustomTabHelper(
 ```
 
 ## Step 5: Done
+``` kotlin
+customTabHelper.build()
+```
 Easy!!!
 
 ## You can change your show tab view:
@@ -69,7 +72,6 @@ For example:
 // Set Custom Color
 customTabHelper.setColor(selectedColor = R.color.teal_700, unselectedColor = R.color.black)
 
-
 // Set Custom Font
 customTabHelper.setFont(
     Typeface.createFromAsset(
@@ -77,6 +79,9 @@ customTabHelper.setFont(
         "font/nunito_regular.ttf"
     )
 )
+
+// Optional: Set Font Size
+customTabHelper.setFontSize(14.0f)
 
 // If you want to do some extra function when selected tab
 customTabHelper.onTabSelected = {
