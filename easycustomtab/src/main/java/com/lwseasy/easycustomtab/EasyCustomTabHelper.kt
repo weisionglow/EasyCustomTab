@@ -2,8 +2,11 @@ package com.lwseasy.easycustomtab
 
 import android.content.Context
 import android.graphics.Typeface
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.tabs.TabLayout
@@ -27,23 +30,23 @@ class EasyCustomTabHelper(
     private var unselectedColor = R.color.black
     private var currentPosition = 0
     private var customFont: Typeface? = null
+    private var customFontSize = 14.0f
 
-    init {
-        setupCustomTab()
-    }
 
     fun setFont(typeface: Typeface) {
-        customFont = typeface
-        refreshTabView()
+        this.customFont = typeface
+    }
+
+    fun setFontSize(fontSize: Float) {
+        this.customFontSize = fontSize
     }
 
     fun setColor(selectedColor: Int, unselectedColor: Int) {
         this.selectedColor = selectedColor
         this.unselectedColor = unselectedColor
-        refreshTabView()
     }
 
-    private fun setupCustomTab() {
+    fun build() {
         for (i: Int in 0 until (tabLayout?.tabCount ?: 0)) {
 
             var binding = DataBindingUtil.inflate<LayoutCustomTabBinding>(
@@ -53,32 +56,28 @@ class EasyCustomTabHelper(
                 false
             )
 
-            if (getTabTitle(i) != null) {
-                binding?.layoutCustomTabTitle?.visibility = View.VISIBLE
-                binding.layoutCustomTabTitle.text = getTabTitle(i)
-            } else {
-                binding?.layoutCustomTabTitle?.visibility = View.INVISIBLE
-            }
-
-            if (getTabIcon(i) != null) {
-                binding?.layoutCustomTabIcon?.visibility = View.VISIBLE
-                binding?.layoutCustomTabIcon?.setImageResource(getTabIcon(i)!!)
-            } else {
-                binding?.layoutCustomTabIcon?.visibility = View.INVISIBLE
-            }
+            binding?.layoutCustomTabTitle?.typeface = customFont
+            binding?.layoutCustomTabTitle?.textSize = customFontSize
 
             when (easyCustomTabType) {
                 EasyCustomTabType.ShowBoth -> {
                     binding.layoutCustomTabTitle.visibility = View.VISIBLE
                     binding.layoutCustomTabIcon.visibility = View.VISIBLE
+
+                    setTextTitle(binding.layoutCustomTabTitle, getTabTitle(i))
+                    setImageIcon(binding.layoutCustomTabIcon, getTabIcon(i))
                 }
                 EasyCustomTabType.ShowImageOnly -> {
                     binding.layoutCustomTabTitle.visibility = View.GONE
                     binding.layoutCustomTabIcon.visibility = View.VISIBLE
+
+                    setImageIcon(binding.layoutCustomTabIcon, getTabIcon(i))
                 }
                 EasyCustomTabType.ShowTextOnly -> {
                     binding.layoutCustomTabTitle.visibility = View.VISIBLE
                     binding.layoutCustomTabIcon.visibility = View.GONE
+
+                    setTextTitle(binding.layoutCustomTabTitle, getTabTitle(i))
                 }
             }
 
@@ -87,12 +86,6 @@ class EasyCustomTabHelper(
         }
 
         addOnTabSelected()
-    }
-
-    private fun refreshTabView() {
-        for (i: Int in 0 until (tabLayout?.tabCount ?: 0)) {
-            updateTabView(tabLayout?.getTabAt(i), tabLayout?.selectedTabPosition == i)
-        }
     }
 
     private fun addOnTabSelected() {
@@ -122,8 +115,6 @@ class EasyCustomTabHelper(
 
             if (isActive) {
                 binding?.layoutCustomTabTitle?.apply {
-                    typeface = customFont
-
                     setTextColor(
                         ContextCompat.getColor(
                             context,
@@ -140,8 +131,6 @@ class EasyCustomTabHelper(
                 )
             } else {
                 binding?.layoutCustomTabTitle?.apply {
-                    typeface = customFont
-
                     setTextColor(
                         ContextCompat.getColor(
                             context,
@@ -159,6 +148,16 @@ class EasyCustomTabHelper(
             }
         }
     }
+
+    private fun setTextTitle(textView: TextView, title: String?) {
+        textView.text = title
+    }
+
+    private fun setImageIcon(imageView: ImageView, imageResource: Int?) {
+        if (imageResource != null)
+            imageView.setImageResource(imageResource)
+    }
+
 
     private fun getTabIcon(position: Int): Int? {
         return try {

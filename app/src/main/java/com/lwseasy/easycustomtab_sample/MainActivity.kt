@@ -48,8 +48,6 @@ class MainActivity : AppCompatActivity() {
             EasyCustomTabType.ShowBoth //Show image and title
         )
 
-        // Step 3: Done
-
         // Optional: Set Custom Color
         customTabHelper.setColor(selectedColor = R.color.teal_700, unselectedColor = R.color.black)
 
@@ -61,9 +59,15 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
+        // Optional: Set Font Size
+        customTabHelper.setFontSize(14.0f)
+
         // Optional: If you want to do some extra function when selected tab
-        customTabHelper.onTabSelected = {
-//            Toast.makeText(this, "Selected Position: $it", Toast.LENGTH_SHORT).show()
+        customTabHelper.onTabSelected = { position ->
+            Toast.makeText(this, "Selected Position: $position", Toast.LENGTH_SHORT).show()
         }
+
+        // Step 3: Done
+        customTabHelper.build()
     }
 }
